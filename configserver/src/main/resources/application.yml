@@ -19,7 +19,6 @@ spring:
     liveness-state:
       enabled: true
 
-#  Permite exponer todos los endpoints de gestión (como /actuator/*) para que estén disponibles en la aplicación (* significa todos).
 management:
   endpoints:
     web:
