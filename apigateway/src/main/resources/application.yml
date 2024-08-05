@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: apigateway
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  cloud:
+    gateway:
+      discover:
+        locator:
+          enabled: false
+          lowerCaseServiceId: true
+
+server:
+  port: 9898
+

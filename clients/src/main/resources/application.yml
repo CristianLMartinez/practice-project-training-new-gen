@@ -2,10 +2,14 @@ spring:
   application:
     name: clients
 
-server:
-  port: 8765
+  config:
+    import: optional:configserver:http://localhost:8888/
 
+server:
+
+  port: 8765
 eureka:
+
   client:
     service-url:
       default-zone: http://localhost:8761/eureka/
