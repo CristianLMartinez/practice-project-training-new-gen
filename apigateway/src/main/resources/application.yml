@@ -10,6 +10,12 @@ spring:
           enabled: false
           lowerCaseServiceId: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 server:
   port: 9898
 

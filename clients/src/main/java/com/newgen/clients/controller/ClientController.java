@@ -12,16 +12,21 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class ClientController {
 
-    ClientService clientService;
+    private final ClientService clientService;
 
     @PostMapping
-    public ResponseEntity<CreateClientDto> createClient(@RequestBody CreateClientDto clientDto){
+    public ResponseEntity<CreateClientDto> createClient(@RequestBody CreateClientDto clientDto) {
         var savedClient = clientService.save(clientDto);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(savedClient);
     }
 
+
+    @GetMapping
+    public ResponseEntity<String> getVersion() {
+        return ResponseEntity.ok("Version 1.0.0");
+    }
 
 
 }
